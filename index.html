@@ -1,29 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlanIt AI</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
 
 </head>
+
 <body>
-    <aside class="fixed top-0 left-0 h-screen w-64 bg-blue-600 flex flex-col text-white border-r border-blue-900">
-    <div class="flex flex-col items-center p-6 border-gray-700">
-    <img src="logo.jpg" alt="Plant ai" class="w-20 h-20 block gap-5 text-center object-contain">
-    <h1 class="mt-16 text-xl p-4 font-bold text-blue-400">Plant Ai</h1>
-    </div>
-    <nav flex-1 p-4>
-        <ul>
-            <li><a href="#" class="flex items-center gap-3 p-3 rounded-lg bg-blue-600 hover:bg-blue-700"> <i class="fa-solid fa-house"></i>Dashboard</a></li>
-            <li><a href="#" class="flex items-center gap-3 p-3 rounded-lg bg-blue-600 hover:bg-blue-700"> <i class="fa solid fa-plus"></i>Nouveau projet</a></li>
-            <li><a href="#" class="flex items-center gap-3 p-3 rounded-lg bg-blue-600 hover:bg-blue-700"><i class="fa solid fa-gear"></i> Paramètres</a></li>
-            
-        </ul>
-    </nav>
+    <aside class="fixed top-0 left-0 h-screen w-64 bg-blue-600 flex flex-col text-white  border-blue-900">
+        <div class="flex flex-col items-center p-6 border-gray-700">
+            <img src="Gemini_Generated_Image_gjcmwcgjcmwcgjcm.jpg" alt="Plant ai"
+                class="w-20 h-20 block gap-5 text-center object-contain">
+            <h1 class="mt-16 text-xl p-4 font-bold text-blue-400">Plant Ai</h1>
+        </div>
+        <nav flex-1 p-4>
+            <ul>
+                <li><a href="#" class="flex items-center gap-3 p-3 rounded-lg bg-blue-600 hover:bg-blue-700"> <i
+                            class="fa-solid fa-house"></i>Dashboard</a></li>
+                <li><a href="#" class="flex items-center gap-3 p-3 rounded-lg bg-blue-600 hover:bg-blue-700"> <i
+                            class="fa solid fa-plus"></i>Nouveau projet</a></li>
+                <li><a href="#" class="flex items-center gap-3 p-3 rounded-lg bg-blue-600 hover:bg-blue-700"><i
+                            class="fa solid fa-gear"></i> Paramètres</a></li>
+
+            </ul>
+        </nav>
     </aside>
-    <main class="ml-64 p-6 border-gray-700 min-h-screen"></main>
+    <main class="ml-64 p-6 border-gray-700 min-h-screen">
+
+        <div>
+            <header class="flex justify-between">
+                <form action="#">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="search project, task..." class="w-150 h-8 border rounded">
+                </form>
+                <button class="bg-blue-600 w-30 h-10 rounded text-white"> <i class="fa-solid fa-plus"></i>create
+                    task</button>
+            </header>
+        </div>
+        <div class="grid grid-cols-3">
+            <div class="border rounded-lg w-60 mt-16 bg-white p-3 shadow-md">
+                <div class="flex items-center gap-2 ">
+                    <div class="h-3 w-3 border bg-red-500 rounded-full">
+                    </div>
+                    <div>
+                        <p class="font-semibold">To Do</p>
+                    </div>
+                </div>
+                <div class="w-full g p-3 bg-gray-50  border-l-5 border-l-red-500 shadow-md w-50">
+                    <div class="flex items-center justify-between border-1-4 border-1-red-500 mb-3">
+                        <p class="text-sm font-semibold">TASK-001</p>
+
+                        <div class=" flex items-center rounded-md border bg-red-500 h-6 w-15">
+                            <i class="fa-solid fa-plus text-xs"></i>
+                            <p class="text-sm font-semibold">High</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium mb-4">Refactor authentication flow</p>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span class="flex items-center gap-1"><i class="fa-sharp fa-solid fa-alarm-clock"></i> 16
+                            h</span>
+                        <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> Nov 17</span>
+                    </div>
+                </div>
+            </div>
+            <div class="border rounded-lg w-60 mt-16 bg-white p-3 shadow-md">
+                <div class="flex items-center gap-2 ">
+                    <div class="h-3 w-3 border bg-yellow-500 rounded-full">
+                    </div>
+                    <div>
+                        <p class="font-semibold">In Progress></p>
+                    </div>
+                </div>
+                <div class="w-full g p-3 bg-gray-50  border-l-5 border-l-yellow-500 shadow-md w-50">
+                    <div class="flex items-center justify-between border-1-4 border-1-red-500 mb-3">
+                        <p class="text-sm font-semibold">TASK-002</p>
+
+                        <div class=" flex items-center rounded-md border bg-red-500 h-6 w-15">
+                            <i class="fa-solid fa-plus text-xs"></i>
+                            <p class="text-sm font-semibold">High</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium mb-4">Refactor authentication flow</p>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span class="flex items-center gap-1"><i class="fa-sharp fa-solid fa-alarm-clock"></i> 16
+                            h</span>
+                        <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> Nov 17</span>
+                    </div>
+                </div>
+            </div>
+            <div class="border rounded-lg w-60 mt-16 bg-white p-3 shadow-md">
+                <div class="flex items-center gap-2 ">
+                    <div class="h-3 w-3 border bg-green-500 rounded-full">
+                    </div>
+                    <div>
+                        <p class="font-semibold">Done</p>
+                    </div>
+                </div>
+                <div class="w-full g p-3 bg-gray-50  border-l-5 border-l-green-500 shadow-md w-50">
+                    <div class="flex items-center justify-between border-1-4 border-1-red-500 mb-3">
+                        <p class="text-sm font-semibold">TASK-003</p>
+
+                        <div class=" flex items-center rounded-md border bg-green-500 h-6 w-15">
+                            <i class="fa-solid fa-plus text-xs"></i>
+                            <p class="text-sm font-semibold">Low</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium mb-4">Refactor authentication flow</p>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span class="flex items-center gap-1"><i class="fa-sharp fa-solid fa-alarm-clock"></i> 16
+                            h</span>
+                        <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> Nov 17</span>
+                    </div>
+                </div>
+            </div>
+            <div class="border rounded-lg w-60 mt-16 bg-white p-3 shadow-md">
+                <div class="flex items-center gap-2 ">
+                    <div class="h-3 w-3 border bg-red-500 rounded-full">
+                    </div>
+                    <div>
+                        <p class="font-semibold">To Do</p>
+                    </div>
+                </div>
+                <div class="w-full g p-3 bg-gray-50  border-l-5 border-l-yellow-500 shadow-md w-50">
+                    <div class="flex items-center justify-between border-1-4 border-1-red-500 mb-3">
+                        <p class="text-sm font-semibold">TASK-001</p>
+
+                        <div class=" flex items-center rounded-md border bg-yellow-500 h-6 w-17">
+                            <i class="fa-solid fa-plus text-xs"></i>
+                            <p class="text-sm font-semibold">Medium</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium mb-4">Refactor authentication flow</p>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span class="flex items-center gap-1"><i class="fa-sharp fa-solid fa-alarm-clock"></i> 16
+                            h</span>
+                        <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> Nov 17</span>
+                    </div>
+                </div>
+            </div>
+            <div class="border rounded-lg w-60 mt-16 bg-white p-3 shadow-md">
+                <div class="flex items-center gap-2 ">
+                    <div class="h-3 w-3 border bg-green-500 rounded-full">
+                    </div>
+                    <div>
+                        <p class="font-semibold">Done</p>
+                    </div>
+                </div>
+                <div class="w-full g p-3 bg-gray-50  border-l-5 border-l-green-500 shadow-md w-50">
+                    <div class="flex items-center justify-between border-1-4 border-1-red-500 mb-3">
+                        <p class="text-sm font-semibold">TASK-003</p>
+
+                        <div class=" flex items-center rounded-md border bg-green-500 h-6 w-15">
+                            <i class="fa-solid fa-plus text-xs"></i>
+                            <p class="text-sm font-semibold">Low</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium mb-4">Refactor authentication flow</p>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span class="flex items-center gap-1"><i class="fa-sharp fa-solid fa-alarm-clock"></i> 16
+                            h</span>
+                        <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> Nov 17</span>
+                    </div>
+                </div>
+            </div>
+            <div class="border rounded-lg w-60 mt-16 bg-white p-3 shadow-md">
+                <div class="flex items-center gap-2 ">
+                    <div class="h-3 w-3 border bg-red-500 rounded-full">
+                    </div>
+                    <div>
+                        <p class="font-semibold">To Do</p>
+                    </div>
+                </div>
+                <div class="w-full g p-3 bg-gray-50  border-l-5 border-l-yellow-500 shadow-md w-50">
+                    <div class="flex items-center justify-between border-1-4 border-1-red-500 mb-3">
+                        <p class="text-sm font-semibold">TASK-001</p>
+
+                        <div class=" flex items-center rounded-md border bg-yellow-500 h-6 w-17">
+                            <i class="fa-solid fa-plus text-xs"></i>
+                            <p class="text-sm font-semibold">Medium</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium mb-4">Refactor authentication flow</p>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span class="flex items-center gap-1"><i class="fa-sharp fa-solid fa-alarm-clock"></i> 16
+                            h</span>
+                        <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> Nov 17</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <p>project progress</p>
+        </div>
     
+    </main>
+
 </body>
+
 </html>
