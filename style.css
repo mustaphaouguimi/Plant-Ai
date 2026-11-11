@@ -1,0 +1,18 @@
+
+
+/* parsley errors styles */
+.parsley-errors-list {
+    color: #dc2626;
+    font-size: 14px;
+    margin-top: 5px;
+    list-style: none;
+    padding: 0;
+}
+
+.parsley-error {
+    border-color: #dc2626 !important;
+}
+
+.parsley-success {
+    border-color: #16a34a !important;
+}

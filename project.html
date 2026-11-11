@@ -7,6 +7,11 @@
     <title>PlanIt AI</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+
+
 </head>
 
 <body>
@@ -45,21 +50,21 @@
                 <h1 class="font-semibold text-2xl text-center">Create a new project</h1>
             </div>
             <div class="bg-gray-50 shadow-md rounded-xl p-6">
-                <form action="#" class="flex flex-col gap-4">
-                    <label for="project-name" class="block mb-2 font-medium" >name of project</label>
-                    <input type="text" name="project-name" class="border border-gray-300 rounded-lg outline-none h-10 px-3 focus:ring-2 focus:ring-blue-500" placeholder="Enter project name" id="project-name">
-                    <label for="description" class="block  mb-2 font-medium">discription</label>
-                    <textarea name="description" class="w-full border border-gray-300 rounded-lg h-10 px-3 outline-none focus:ring-2 focus:ring-blue-500"  placeholder="Discript your project" id="description"></textarea>
-                    <label for="duration" class="mb-2 font-medium">duration in days</label>
-                    <input type="number" placeholder="e.g. 7"
+                <form action="#" data-parsley-validate class="flex flex-col gap-4">
+                    <label for="project-name" class="block mb-2 font-medium"  >name of project</label>
+                    <input type="text" name="project-name"  class="border border-gray-300 rounded-lg outline-none h-10 px-3 focus:ring-2 focus:ring-blue-500" placeholder="Enter project name" id="project-name" required minlength="3" data-parsley-required-message="Project name is required" data-parsley-minlength-message="name must contain at lest 3 caracters">
+                    <label for="description" data-parsley-required="true" class="block  mb-2 font-medium">discription</label>
+                    <textarea name="description" required minlength="10" data-parsley-required-message="description of project is required" data-parsley-minlength-message="at lest 10 character"  class="w-full border border-gray-300 rounded-lg h-10 px-3 outline-none focus:ring-2 focus:ring-blue-500"  placeholder="Discript your project" id="description"></textarea>
+                    <label for="duration" data-parsley-minlength="1" class="mb-2 font-medium">duration in days</label>
+                    <input type="number" required min="1" data-parsley-required-message="Duration is required" placeholder="e.g. 7" data-parsley-type="number"
                     class="w-full border border-gray-300 rounded-lg h-10 px-3 outline-none focus:ring-2 focus:ring-blue-500">
                     <label for="Number-of-developers" class="block mb-2 font-medium">Number of developers</label>
-                    <input type="number" class="w-full border border-gray-300 rounded-lg h-10 px-3 outline-none focus:ring-2 focus:ring-blue-500" name="Number-of-developers" placeholder="e.g. 4">
+                    <input type="number" required min="1" data-parsley-required-message="Enter number of devlopers" class="w-full border border-gray-300 rounded-lg h-10 px-3 outline-none focus:ring-2 focus:ring-blue-500" name="Number-of-developers" placeholder="e.g. 4">
                     <label for="technologies" class="mb-2 font-medium">technologies</label>
-                    <input type="text" class="w-full border border-gray-300 rounded-lg h-10 px-3 outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g. html js react.js">
+                    <input type="text" required data-parsley-required-message="Enter technologies you want to use"="true" class="w-full border border-gray-300 rounded-lg h-10 px-3 outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g. html js react.js">
 
                     <label for="level" class="mb-2 font-medium">level</label>
-                    <select name="level" class="w-ful border border-gray-300 rounded-lg h-10 px-3 outline-none focus:ring-2 focus:ring-blue-500" id="level ">
+                    <select name="level" class="w-ful border border-gray-300 rounded-lg h-10 px-3 outline-none focus:ring-2 focus:ring-blue-500" id="level" required>
                         <option value="High">High</option>
                         <option value="Medium">Medium</option>
                         <option value="Low">Low</option>
@@ -71,6 +76,10 @@
         </div>
     </main>
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/dist/parsley.min.js"></script>
 </body>
 
 </html>
