@@ -63,15 +63,15 @@
                 </div>
                 <div class="w-full g p-3 bg-gray-50  border-l-5 border-l-red-500 shadow-md w-50">
                     <div class="flex items-center justify-between border-1-4 border-1-red-500 mb-3">
-                        <p class="text-sm font-semibold">TASK-001</p>
+                        <p class="text-sm font-semibold">${TASK-001}</p>
 
                         <div class=" flex items-center rounded-md border bg-red-500 h-6 w-15">
                             <i class="fa-solid fa-plus text-xs"></i>
-                            <p class="text-sm font-semibold">High</p>
+                            <p class="text-sm font-semibold">${High}</p>
                         </div>
                     </div>
                     <div>
-                        <p class="text-sm font-medium mb-4">Refactor authentication flow</p>
+                        <p class="text-sm font-medium mb-4">$Refactor authentication flow</p>
                     </div>
                     <div class="flex items-center justify-between text-xs text-gray-500">
                         <span class="flex items-center gap-1"><i class="fa-sharp fa-solid fa-alarm-clock"></i> 16
@@ -91,8 +91,7 @@
                 <div class="w-full g p-3 bg-gray-50  border-l-5 border-l-yellow-500 shadow-md w-50">
                     <div class="flex items-center justify-between border-1-4 border-1-red-500 mb-3">
                         <p class="text-sm font-semibold">TASK-002</p>
-
-                        <div class=" flex items-center rounded-md border bg-red-500 h-6 w-15">
+                        <div class=" flex items-center rounded-md border bg-red-500 h-6 p-2 w-20">
                             <i class="fa-solid fa-plus text-xs"></i>
                             <p class="text-sm font-semibold">High</p>
                         </div>
@@ -103,7 +102,7 @@
                     <div class="flex items-center justify-between text-xs text-gray-500">
                         <span class="flex items-center gap-1"><i class="fa-sharp fa-solid fa-alarm-clock"></i> 16
                             h</span>
-                        <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> Nov 17</span>
+                        <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i>Nov 17</span>
                     </div>
                 </div>
             </div>
@@ -145,8 +144,7 @@
                 <div class="w-full g p-3 bg-gray-50  border-l-5 border-l-yellow-500 shadow-md w-50">
                     <div class="flex items-center justify-between border-1-4 border-1-red-500 mb-3">
                         <p class="text-sm font-semibold">TASK-001</p>
-
-                        <div class=" flex items-center rounded-md border bg-yellow-500 h-6 w-17">
+                        <div class=" flex items-center rounded-md border bg-yellow-500 p-2 h-6 w-20">
                             <i class="fa-solid fa-plus text-xs"></i>
                             <p class="text-sm font-semibold">Medium</p>
                         </div>
@@ -172,7 +170,6 @@
                 <div class="w-full g p-3 bg-gray-50  border-l-5 border-l-green-500 shadow-md w-50">
                     <div class="flex items-center justify-between  mb-3">
                         <p class="text-sm font-semibold">TASK-003</p>
-
                         <div class=" flex items-center rounded-md border bg-green-500 h-6 w-15">
                             <i class="fa-solid fa-plus text-xs"></i>
                             <p class="text-sm font-semibold">Low</p>
@@ -295,23 +292,7 @@
 
 
     </main>
-    <script>
-        let modal = document.getElementById("modal")
-        let open = document.getElementById("open")
-        let close=document.getElementById("close")
-        const vform=document.getElementById("vform")
-        console.log(vform)
-        open.addEventListener("click", (e) => {
-            modal.classList.toggle("hidden")
-        })
-        vform.addEventListener("submit",()=>{
-        const isValid=$(vform).parsley().isValid();
-
-            if(isValid){
-            modal.classList.add("hidden")
-            }   
-        })
-    </script>
+    <script src="script.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/dist/parsley.min.js"></script>
 </body>

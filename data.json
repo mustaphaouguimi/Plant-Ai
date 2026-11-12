@@ -1,0 +1,375 @@
+ [
+    {
+      "id": "TASK-001",
+      "title": "Initialize the project structure",
+      "description": "Create the project folders and organize HTML, CSS, JavaScript and JSON files. Prepare the main pages and shared assets.",
+      "userStories": [
+        "As a developer, I want an organized project structure so that I can maintain and develop the application easily."
+      ],
+      "acceptanceCriteria": [
+        "The project contains index.html, new-project.html and project.html.",
+        "CSS, JavaScript and data folders are created.",
+        "All HTML pages load without errors."
+      ],
+      "priority": "Critical",
+      "importance": "High",
+      "size": "S",
+      "estimatedTime": 4,
+      "deadline": "Day 1",
+      "status": "To Do",
+      "dependencies": []
+    },
+    {
+      "id": "TASK-002",
+      "title": "Create the shared application layout",
+      "description": "Implement the common header, PLANIT AI logo, navigation links and responsive layout using Tailwind CSS.",
+      "userStories": [
+        "As a user, I want consistent navigation so that I can move between the dashboard and project creation pages."
+      ],
+      "acceptanceCriteria": [
+        "The header displays the PLANIT AI logo.",
+        "Dashboard and Nouveau projet links navigate to the correct pages.",
+        "The layout is responsive on desktop and mobile."
+      ],
+      "priority": "High",
+      "importance": "High",
+      "size": "M",
+      "estimatedTime": 6,
+      "deadline": "Day 2",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-001"
+      ]
+    },
+    {
+      "id": "TASK-003",
+      "title": "Build the dashboard interface",
+      "description": "Create the dashboard displaying project cards with project names, descriptions, total tasks, completed tasks, remaining tasks and progress bars.",
+      "userStories": [
+        "As a user, I want to see all my projects so that I can monitor their progress.",
+        "As a user, I want to see project statistics so that I can understand the current development status."
+      ],
+      "acceptanceCriteria": [
+        "Project cards display the project name and description.",
+        "Each card displays total, completed and remaining tasks.",
+        "Each card displays a progress bar.",
+        "An empty state appears when no projects exist.",
+        "A button allows users to create a new project."
+      ],
+      "priority": "Critical",
+      "importance": "High",
+      "size": "L",
+      "estimatedTime": 8,
+      "deadline": "Day 3",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-004",
+      "title": "Build the project creation form",
+      "description": "Create the project form containing project name, description, complete brief, duration, developer count, technologies and difficulty level.",
+      "userStories": [
+        "As a user, I want to enter my project information so that I can generate a development plan."
+      ],
+      "acceptanceCriteria": [
+        "All required project fields are displayed.",
+        "The difficulty selector contains Beginner, Intermediate and Advanced.",
+        "The duration and developer count accept integer values greater than or equal to one.",
+        "The form is responsive and accessible."
+      ],
+      "priority": "Critical",
+      "importance": "High",
+      "size": "M",
+      "estimatedTime": 6,
+      "deadline": "Day 3",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-005",
+      "title": "Implement real-time form validation",
+      "description": "Validate the project creation form using JavaScript input and submit events. Display individual error messages and disable submission while the form is invalid.",
+      "userStories": [
+        "As a user, I want immediate validation feedback so that I can correct errors before generating my plan."
+      ],
+      "acceptanceCriteria": [
+        "Required fields cannot be empty.",
+        "Duration and developer count must be valid positive integers.",
+        "Error messages appear below invalid fields.",
+        "Errors disappear when fields become valid.",
+        "The submit button remains disabled while the form is invalid."
+      ],
+      "priority": "High",
+      "importance": "High",
+      "size": "M",
+      "estimatedTime": 6,
+      "deadline": "Day 4",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-004"
+      ]
+    },
+    {
+      "id": "TASK-006",
+      "title": "Implement AI prompt generation and API integration",
+      "description": "Build a dynamic prompt using the project information and the required JSON task structure. Send the prompt to the AI API using Fetch and handle the response.",
+      "userStories": [
+        "As a user, I want AI to analyze my project brief so that I can receive an organized development plan."
+      ],
+      "acceptanceCriteria": [
+        "The prompt contains all submitted project information.",
+        "The prompt requests valid JSON output.",
+        "The API request uses Fetch.",
+        "Successful responses are received and processed.",
+        "API errors are handled without crashing the application."
+      ],
+      "priority": "Critical",
+      "importance": "High",
+      "size": "L",
+      "estimatedTime": 8,
+      "deadline": "Day 6",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-005"
+      ]
+    },
+    {
+      "id": "TASK-007",
+      "title": "Implement AI response parsing and validation",
+      "description": "Parse the AI response into a JavaScript object and validate project information, mandatory task fields, allowed values, unique identifiers, dependencies, deadlines and estimated workload before displaying or saving the plan.",
+      "userStories": [
+        "As a user, I want the generated plan to be validated so that I can work with reliable and consistent tasks."
+      ],
+      "acceptanceCriteria": [
+        "The AI response is parsed as valid JSON.",
+        "All mandatory task properties are checked.",
+        "Priority, importance, size and status values are validated.",
+        "Task IDs are unique.",
+        "Dependencies reference existing task IDs.",
+        "Deadlines do not exceed project duration.",
+        "Invalid plans are rejected with a clear error message."
+      ],
+      "priority": "Critical",
+      "importance": "High",
+      "size": "L",
+      "estimatedTime": 8,
+      "deadline": "Day 7",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-006"
+      ]
+    },
+    {
+      "id": "TASK-008",
+      "title": "Implement generation states and retry handling",
+      "description": "Create the generation interface with idle, loading, success and error states. Prevent duplicate requests and provide a retry option when generation fails.",
+      "userStories": [
+        "As a user, I want to see the generation status so that I know whether my plan is being processed successfully."
+      ],
+      "acceptanceCriteria": [
+        "The idle state displays the generation button.",
+        "The loading state displays a spinner.",
+        "The generation button is disabled during loading.",
+        "The success state redirects to the project Task Board.",
+        "The error state displays a clear message.",
+        "The retry button allows another generation attempt.",
+        "The interface never remains permanently blocked after a failed request."
+      ],
+      "priority": "High",
+      "importance": "High",
+      "size": "S",
+      "estimatedTime": 4,
+      "deadline": "Day 7",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-006"
+      ]
+    },
+    {
+      "id": "TASK-009",
+      "title": "Implement LocalStorage project management",
+      "description": "Save generated projects and their task data in LocalStorage. Implement project retrieval, project deletion and automatic dashboard updates.",
+      "userStories": [
+        "As a user, I want my projects to be saved so that I can access them after reloading the application."
+      ],
+      "acceptanceCriteria": [
+        "Generated projects are saved in LocalStorage.",
+        "Projects are retrieved when the dashboard loads.",
+        "Deleting a project requires confirmation.",
+        "Deleted projects disappear from the dashboard.",
+        "Project information remains available after page reload."
+      ],
+      "priority": "Critical",
+      "importance": "High",
+      "size": "M",
+      "estimatedTime": 6,
+      "deadline": "Day 5",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-003"
+      ]
+    },
+    {
+      "id": "TASK-010",
+      "title": "Build the Task Board interface",
+      "description": "Create the project Task Board with project summary information and three Kanban columns: To Do, In Progress and Done. Display task cards with their essential information.",
+      "userStories": [
+        "As a user, I want to visualize my tasks in a Kanban board so that I can follow the development workflow."
+      ],
+      "acceptanceCriteria": [
+        "The project name, duration and team size are displayed.",
+        "Estimated hours and project capacity are displayed.",
+        "Progress information is displayed.",
+        "The three Kanban columns are visible.",
+        "Task cards display ID, title, priority, size, estimated time and deadline.",
+        "The board is responsive."
+      ],
+      "priority": "Critical",
+      "importance": "High",
+      "size": "L",
+      "estimatedTime": 8,
+      "deadline": "Day 7",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-007",
+        "TASK-009"
+      ]
+    },
+    {
+      "id": "TASK-011",
+      "title": "Implement task details and editing modal",
+      "description": "Create a modal that displays complete task information and allows users to modify the title, description, priority, size, deadline and status.",
+      "userStories": [
+        "As a user, I want to view complete task details so that I can understand the work required.",
+        "As a user, I want to edit tasks so that I can adapt the generated plan to my needs."
+      ],
+      "acceptanceCriteria": [
+        "Clicking a task card opens its detail modal.",
+        "All task properties are displayed.",
+        "Editable fields can be modified.",
+        "Saving changes updates the Task Board.",
+        "Changes remain available after reloading the page.",
+        "The modal can be closed without saving changes."
+      ],
+      "priority": "High",
+      "importance": "High",
+      "size": "L",
+      "estimatedTime": 8,
+      "deadline": "Day 8",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-010"
+      ]
+    },
+    {
+      "id": "TASK-012",
+      "title": "Implement task deletion and dependency management",
+      "description": "Allow task deletion with confirmation and automatically remove deleted task IDs from other tasks' dependency arrays.",
+      "userStories": [
+        "As a user, I want to delete unnecessary tasks so that I can keep my development plan updated."
+      ],
+      "acceptanceCriteria": [
+        "Deleting a task requires confirmation.",
+        "The deleted task disappears from the board.",
+        "Its ID is removed from every other task's dependencies.",
+        "Changes are saved in LocalStorage."
+      ],
+      "priority": "High",
+      "importance": "Medium",
+      "size": "S",
+      "estimatedTime": 4,
+      "deadline": "Day 8",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-011"
+      ]
+    },
+    {
+      "id": "TASK-013",
+      "title": "Implement dependency-based status validation",
+      "description": "Prevent users from moving a task to Done while one or more dependencies are not completed. Display an explanatory message and update project progress based only on task statuses.",
+      "userStories": [
+        "As a user, I want task dependencies to be respected so that tasks are completed in the correct order.",
+        "As a user, I want accurate progress statistics so that I can monitor project completion."
+      ],
+      "acceptanceCriteria": [
+        "A task cannot become Done if one of its dependencies is not Done.",
+        "An explanatory message appears when the operation is rejected.",
+        "A task can become Done when all dependencies are Done.",
+        "Progress equals the number of Done tasks divided by total tasks.",
+        "Progress updates immediately after a valid status change."
+      ],
+      "priority": "Critical",
+      "importance": "High",
+      "size": "M",
+      "estimatedTime": 6,
+      "deadline": "Day 8",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-011",
+        "TASK-012"
+      ]
+    },
+    {
+      "id": "TASK-014",
+      "title": "Implement AI settings and demo mode",
+      "description": "Create the AI settings modal with a password field for the API key, store the key in sessionStorage and implement demo mode using Fetch to load data/sample-plan.json.",
+      "userStories": [
+        "As a user, I want to configure my AI API key so that I can generate development plans.",
+        "As a user, I want to use demo mode so that I can test the application without calling the AI API."
+      ],
+      "acceptanceCriteria": [
+        "The settings modal is accessible from the header.",
+        "The API key field uses password input type.",
+        "The API key is stored in sessionStorage only.",
+        "The API key is not stored in LocalStorage.",
+        "Demo mode loads sample-plan.json using Fetch GET.",
+        "The sample plan passes through the same validation process as AI-generated plans."
+      ],
+      "priority": "High",
+      "importance": "High",
+      "size": "M",
+      "estimatedTime": 6,
+      "deadline": "Day 8",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-007",
+        "TASK-009"
+      ]
+    },
+    {
+      "id": "TASK-015",
+      "title": "Perform final testing and application deployment",
+      "description": "Test the complete application workflow, fix identified bugs, verify responsive behavior and prepare the application for deployment. Document the setup and usage instructions.",
+      "userStories": [
+        "As a user, I want a stable and functional application so that I can manage projects and development plans reliably."
+      ],
+      "acceptanceCriteria": [
+        "Project creation and validation work correctly.",
+        "AI generation and demo mode work correctly.",
+        "Invalid AI responses are rejected.",
+        "Project and task modifications persist after reload.",
+        "Task dependencies are enforced.",
+        "Project deletion and task deletion work correctly.",
+        "The application works on desktop and mobile.",
+        "No critical JavaScript errors remain.",
+        "The application is deployed and basic usage instructions are documented."
+      ],
+      "priority": "Critical",
+      "importance": "High",
+      "size": "L",
+      "estimatedTime": 8,
+      "deadline": "Day 9",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-008",
+        "TASK-010",
+        "TASK-013",
+        "TASK-014"
+      ]
+    }
+  ]
