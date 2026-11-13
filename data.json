@@ -1,4 +1,7 @@
- [
+ {
+  "projectName": "Demo project",
+  "totalEstimatedHours": 34,
+  "tasks":[
     {
       "id": "TASK-001",
       "title": "Initialize the project structure",
@@ -373,3 +376,4 @@
       ]
     }
   ]
+ }

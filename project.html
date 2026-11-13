@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>taskes</h1>
-    <div class="laoder hidden" id="loader">loading...</div>
-    <div class="grid grid-cols-3 place-items-center" id="task-grid">
-    </div>
-    <script src="app.js"></script>
+    <aside class="fixed top-0 left-0 h-screen w-64 bg-blue-600 flex flex-col text-white  border-blue-900">
+        <div class="flex flex-col items-center p-6 border-gray-700">
+            <img src="Gemini_Generated_Image_gjcmwcgjcmwcgjcm.jpg" alt="Plant ai"
+                class="w-20 h-20 block gap-5 text-center object-contain">
+            <h1 class="mt-16 text-xl p-4 font-bold text-blue-400">Plant Ai</h1>
+        </div>
+        <nav flex-1 p-4>
+            <ul>
+                <li><a href="#" class="flex items-center gap-3 p-3 rounded-lg bg-blue-600 hover:bg-blue-700"> <i
+                            class="fa-solid fa-house"></i>Dashboard</a></li>
+                <li><a href="new-project.html"
+                        class="flex items-center gap-3 p-3 rounded-lg bg-blue-600 hover:bg-blue-700"> <i
+                            class="fa solid fa-plus"></i>Nouveau projet</a></li>
+                <li><button type="button" class="flex items-center gap-3 p-3 rounded-lg bg-blue-600 hover:bg-blue-700"
+                        id="open" data-toggle="modal" data-target="#modal"><i class="fa-solid fa-gear"></i>
+                        Paramètres</button><a href="project.html"></a></li>
+
+            </ul>
+        </nav>
+    </aside>
+    <main class="ml-64  min-h-screen">
+        <h1 id="titre" class="text-center font-semibold"></h1>
+        <div class="laoder hidden" id="loader">loading...</div>
+        <div class="grid grid-cols-3 place-items-center" id="task-grid">
+        </div>
+    </main>
+    <script type="module" src="app.js"></script>
 </body>
+
 </html>

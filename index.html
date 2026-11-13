@@ -11,18 +11,20 @@
 </head>
 
 <body>
-    <aside class="fixed top-0 left-0 h-screen w-64 bg-blue-600 flex flex-col text-white  border-blue-900">
+ <!-- <input type="checkbox" id="menu-toggle" class="hidden peer"> -->
+
+    <aside class="fixed top-0 left-0 h-screen w-64 bg-blue-600 flex flex-col text-white  border-blue-900 ">
         <div class="flex flex-col items-center p-6 border-gray-700">
             <img src="Gemini_Generated_Image_gjcmwcgjcmwcgjcm.jpg" alt="Plant ai"
                 class="w-20 h-20 block gap-5 text-center object-contain">
-            <h1 class="mt-16 text-xl p-4 font-bold text-blue-400">Plant Ai</h1>
+            <h1 class="mt-4 text-xl p-4 font-bold text-blue-400">Plant Ai</h1>
         </div>
         <nav flex-1 p-4>
             <ul>
-                <li><a href="#" class="flex items-center gap-3 p-3 rounded-lg bg-blue-600 hover:bg-blue-700"> <i
+                <li><a href="#" class="flex items-center gap-3 p-3 rounded-lg bg-blue-600 hover:bg-blue-700 transition"> <i
                             class="fa-solid fa-house"></i>Dashboard</a></li>
                 <li><a href="new-project.html"
-                        class="flex items-center gap-3 p-3 rounded-lg bg-blue-600 hover:bg-blue-700"> <i
+                        class="flex items-center gap-3 p-3 rounded-lg bg-blue-600 hover:bg-blue-700 transition"> <i
                             class="fa solid fa-plus"></i>Nouveau projet</a></li>
                 <li><button type="button" class="flex items-center gap-3 p-3 rounded-lg bg-blue-600 hover:bg-blue-700"
                         id="open" data-toggle="modal" data-target="#modal"><i class="fa-solid fa-gear"></i>
@@ -33,6 +35,7 @@
     </aside>
 
     <main class="ml-64 p-6 border-gray-700 min-h-screen">
+        
         <div id="modal"
             class="hidden fixed bg-black/50 inset-0 z-50 flex items-center justify-center rounded-xl p-6 h-modal">
             <div class="bg-gray-50 shadow-md rounded-xl p-6 w-full  max-w-md">
@@ -45,8 +48,12 @@
             </div>
 
         </div>
+        
         <div>
             <header class="flex justify-between">
+                <!-- <label for="menu-toggle" class="cursor-pointer">
+            <i class="fa-solid fa-bars text-2xl"></i>
+        </label> -->
                 <form action="#">
                     <i class="fa-solid fa-search"></i>
                     <input type="text" placeholder="search project, task..." class="w-150 h-8 border rounded">
@@ -74,7 +81,7 @@
                         </p>
                     </div>
                     <div class="flex items-center justify-between text-xs text-gray-500">
-                        <button class="flex items-center justify-center gap-1 h-7 border rounded-md p-1 w-15 bg-blue-600 text-white text-center "><a href="project.html">Open</a> 
+                        <button class="flex items-center justify-center gap-1 h-7 border rounded-md p-1 w-15 bg-blue-600 text-white text-center "><i class="fa-solid fa-arrow-up-right-from-square"></i><a href="project.html">Open</a> 
                         </button>
                         <button class="flex items-center justify-center h-7 border rounded-md bg-red-500 text-white gap-1 w-15 "><i class="fa-solid fa-trash"></i>dalete</button>
                     </div>
@@ -98,7 +105,7 @@
                         </p>
                     </div>
                     <div class="flex items-center justify-between text-xs text-gray-500">
-                        <button class="flex items-center justify-center gap-1 h-7 border rounded-md p-1 w-15 bg-blue-600 text-white text-center "><a href="project.html">Open</a> 
+                        <button class="flex items-center justify-center gap-1 h-7 border rounded-md p-1 w-15 bg-blue-600 text-white text-center "><i class="fa-solid fa-arrow-up-right-from-square"></i><a href="project.html">Open</a> 
                         </button>
                         <button class="flex items-center justify-center h-7 border rounded-md bg-red-500 text-white gap-1 w-15 "><i class="fa-solid fa-trash"></i>dalete</button>
                     </div>
@@ -122,7 +129,7 @@
                         </p>
                     </div>
                     <div class="flex items-center justify-between text-xs text-gray-500">
-                        <button class="flex items-center justify-center gap-1 h-7 border rounded-md p-1 w-15 bg-blue-600 text-white text-center "><a href="project.html">Open</a> 
+                        <button class="flex items-center justify-center gap-1 h-7 border rounded-md p-1 w-15 bg-blue-600 text-white text-center "><i class="fa-solid fa-arrow-up-right-from-square"></i><a href="project.html">Open</a> 
                         </button>
                         <button class="flex items-center justify-center h-7 border rounded-md bg-red-500 text-white gap-1 w-15 "><i class="fa-solid fa-trash"></i>dalete</button>
                     </div>
@@ -170,7 +177,7 @@
                         </p>
                     </div>
                     <div class="flex items-center justify-between text-xs text-gray-500">
-                        <button class="flex items-center justify-center gap-1 h-7 border rounded-md p-1 w-15 bg-blue-600 text-white text-center "><a href="project.html">Open</a> 
+                        <button class="flex items-center justify-center gap-1 h-7 border rounded-md p-1 w-15 bg-blue-600 text-white text-center "><i class="fa-solid fa-arrow-up-right-from-square"></i><a href="project.html">Open</a> 
                         </button>
                         <button class="flex items-center justify-center h-7 border rounded-md bg-red-500 text-white gap-1 w-15 "><i class="fa-solid fa-trash"></i>dalete</button>
                     </div>
@@ -194,7 +201,7 @@
                         </p>
                     </div>
                     <div class="flex items-center justify-between text-xs text-gray-500">
-                        <button class="flex items-center justify-center gap-1 h-7 border rounded-md p-1 w-15 bg-blue-600 text-white text-center "><a href="project.html">Open</a> 
+                        <button class="flex items-center justify-center gap-1 h-7 border rounded-md p-1 w-15 bg-blue-600 text-white text-center "><i class="fa-solid fa-arrow-up-right-from-square"></i><a href="project.html">Open</a> 
                         </button>
                         <button class="flex items-center justify-center h-7 border rounded-md bg-red-500 text-white gap-1 w-15 "><i class="fa-solid fa-trash"></i>dalete</button>
                     </div>
@@ -286,7 +293,7 @@
 
     </main>
     <script src="script.js"></script>
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/dist/parsley.min.js"></script>
 </body>
