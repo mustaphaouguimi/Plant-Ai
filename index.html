@@ -7,7 +7,7 @@
     <title>PlanIt AI</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
-     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -26,17 +26,20 @@
                             class="fa solid fa-plus"></i>Nouveau projet</a></li>
                 <li><button type="button" class="flex items-center gap-3 p-3 rounded-lg bg-blue-600 hover:bg-blue-700"
                         id="open" data-toggle="modal" data-target="#modal"><i class="fa-solid fa-gear"></i>
-                        Paramètres</button></li>
+                        Paramètres</button><a href="project.html"></a></li>
 
             </ul>
         </nav>
     </aside>
 
     <main class="ml-64 p-6 border-gray-700 min-h-screen">
-        <div id="modal" class="hidden fixed bg-black/50 inset-0 z-50 flex items-center justify-center rounded-xl p-6 h-modal">
+        <div id="modal"
+            class="hidden fixed bg-black/50 inset-0 z-50 flex items-center justify-center rounded-xl p-6 h-modal">
             <div class="bg-gray-50 shadow-md rounded-xl p-6 w-full  max-w-md">
-                <form id="vform"  data-parsley-validate class="flex flex-col gap-4">
-                    <input type="password" required minlength="8" data-parsley-minlength="8" data-parsley-minlength-message="at lest 8 character" value="send" placeholder="Enter API key" class="border border-gray-300 rounded-lg outline-none h-10 px-3 focus:ring-2 focus:ring-blue-500">
+                <form id="vform" data-parsley-validate class="flex flex-col gap-4">
+                    <input type="password" required minlength="8" data-parsley-minlength="8"
+                        data-parsley-minlength-message="at lest 8 character" value="send" placeholder="Enter API key"
+                        class="border border-gray-300 rounded-lg outline-none h-10 px-3 focus:ring-2 focus:ring-blue-500">
                     <button type="submit" id="close" class="rounded-lg bg-blue-600 hover:bg-blue-700">send</button>
                 </form>
             </div>
@@ -44,7 +47,7 @@
         </div>
         <div>
             <header class="flex justify-between">
-                <form action="#" >
+                <form action="#">
                     <i class="fa-solid fa-search"></i>
                     <input type="text" placeholder="search project, task..." class="w-150 h-8 border rounded">
                 </form>
@@ -52,166 +55,156 @@
                     task</button>
             </header>
         </div>
-        <div class="grid grid-cols-3">
+        <div class="grid grid-cols-3" id="task-grid">
             <div class="border rounded-lg w-60 mt-16 bg-white p-3 shadow-md">
                 <div class="flex items-center gap-2 ">
-                    <div class="h-3 w-3 border bg-red-500 rounded-full">
-                    </div>
-                    <div>
-                        <p class="font-semibold">To Do</p>
-                    </div>
-                </div>
-                <div class="w-full g p-3 bg-gray-50  border-l-5 border-l-red-500 shadow-md w-50">
-                    <div class="flex items-center justify-between border-1-4 border-1-red-500 mb-3">
-                        <p class="text-sm font-semibold">${TASK-001}</p>
 
-                        <div class=" flex items-center rounded-md border bg-red-500 h-6 w-15">
-                            <i class="fa-solid fa-plus text-xs"></i>
-                            <p class="text-sm font-semibold">${High}</p>
-                        </div>
-                    </div>
                     <div>
-                        <p class="text-sm font-medium mb-4">$Refactor authentication flow</p>
-                    </div>
-                    <div class="flex items-center justify-between text-xs text-gray-500">
-                        <span class="flex items-center gap-1"><i class="fa-sharp fa-solid fa-alarm-clock"></i> 16
-                            h</span>
-                        <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> Nov 17</span>
+                        <p class="font-semibold">PlanIt</p>
                     </div>
                 </div>
-            </div>
-            <div class="border rounded-lg w-60 mt-16 bg-white p-3 shadow-md">
-                <div class="flex items-center gap-2 ">
-                    <div class="h-3 w-3 border bg-yellow-500 rounded-full">
-                    </div>
-                    <div>
-                        <p class="font-semibold">In Progress</p>
-                    </div>
-                </div>
-                <div class="w-full g p-3 bg-gray-50  border-l-5 border-l-yellow-500 shadow-md w-50">
-                    <div class="flex items-center justify-between border-1-4 border-1-red-500 mb-3">
-                        <p class="text-sm font-semibold">TASK-002</p>
-                        <div class=" flex items-center rounded-md border bg-red-500 h-6 p-2 w-20">
-                            <i class="fa-solid fa-plus text-xs"></i>
-                            <p class="text-sm font-semibold">High</p>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="text-sm font-medium mb-4">Refactor authentication flow</p>
-                    </div>
-                    <div class="flex items-center justify-between text-xs text-gray-500">
-                        <span class="flex items-center gap-1"><i class="fa-sharp fa-solid fa-alarm-clock"></i> 16
-                            h</span>
-                        <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i>Nov 17</span>
-                    </div>
-                </div>
-            </div>
-            <div class="border rounded-lg w-60 mt-16 bg-white p-3 shadow-md">
-                <div class="flex items-center gap-2 ">
-                    <div class="h-3 w-3 border bg-green-500 rounded-full">
-                    </div>
-                    <div>
-                        <p class="font-semibold">Done</p>
-                    </div>
-                </div>
-                <div class="w-full g p-3 bg-gray-50  border-l-5 border-l-green-500 shadow-md w-50">
-                    <div class="flex items-center justify-between border-1-4 border-1-red-500 mb-3">
-                        <p class="text-sm font-semibold">TASK-003</p>
+                <div class="w-full g p-3 bg-gray-50   shadow-md w-50">
 
-                        <div class=" flex items-center rounded-md border bg-green-500 h-6 w-15">
-                            <i class="fa-solid fa-plus text-xs"></i>
-                            <p class="text-sm font-semibold">Low</p>
-                        </div>
-                    </div>
                     <div>
-                        <p class="text-sm font-medium mb-4">Refactor authentication flow</p>
+                        <p class="text-sm font-medium mb-4">
+                            Réaliser, en HTML, Tailwind CSS et JavaScript natif, une application inspirée de Jira,
+                            Linear ou Trello. L'utilisateur décrit son projet dans un formulaire ; l'application
+                            construit un prompt, l'envoie à une API d'IA avec Fetch (requête POST, JSON),
+                            exploite la réponse et affiche le plan sous forme de tableau de tâches.
+                        </p>
                     </div>
                     <div class="flex items-center justify-between text-xs text-gray-500">
-                        <span class="flex items-center gap-1"><i class="fa-sharp fa-solid fa-alarm-clock"></i> 16
-                            h</span>
-                        <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> Nov 17</span>
+                        <button class="flex items-center justify-center gap-1 h-7 border rounded-md p-1 w-15 bg-blue-600 text-white text-center "><a href="project.html">Open</a> 
+                        </button>
+                        <button class="flex items-center justify-center h-7 border rounded-md bg-red-500 text-white gap-1 w-15 "><i class="fa-solid fa-trash"></i>dalete</button>
                     </div>
                 </div>
             </div>
             <div class="border rounded-lg w-60 mt-16 bg-white p-3 shadow-md">
                 <div class="flex items-center gap-2 ">
-                    <div class="h-3 w-3 border bg-red-500 rounded-full">
-                    </div>
-                    <div>
-                        <p class="font-semibold">To Do</p>
-                    </div>
-                </div>
-                <div class="w-full g p-3 bg-gray-50  border-l-5 border-l-yellow-500 shadow-md w-50">
-                    <div class="flex items-center justify-between border-1-4 border-1-red-500 mb-3">
-                        <p class="text-sm font-semibold">TASK-001</p>
-                        <div class=" flex items-center rounded-md border bg-yellow-500 p-2 h-6 w-20">
-                            <i class="fa-solid fa-plus text-xs"></i>
-                            <p class="text-sm font-semibold">Medium</p>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="text-sm font-medium mb-4">Refactor authentication flow</p>
-                    </div>
-                    <div class="flex items-center justify-between text-xs text-gray-500">
-                        <span class="flex items-center gap-1"><i class="fa-sharp fa-solid fa-alarm-clock"></i> 16
-                            h</span>
-                        <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> Nov 17</span>
-                    </div>
-                </div>
-            </div>
-            <div class="border rounded-lg w-60 mt-16 bg-white p-3 shadow-md">
-                <div class="flex items-center gap-2 ">
-                    <div class="h-3 w-3 border bg-green-500 rounded-full">
-                    </div>
-                    <div>
-                        <p class="font-semibold">Done</p>
-                    </div>
-                </div>
-                <div class="w-full g p-3 bg-gray-50  border-l-5 border-l-green-500 shadow-md w-50">
-                    <div class="flex items-center justify-between  mb-3">
-                        <p class="text-sm font-semibold">TASK-003</p>
-                        <div class=" flex items-center rounded-md border bg-green-500 h-6 w-15">
-                            <i class="fa-solid fa-plus text-xs"></i>
-                            <p class="text-sm font-semibold">Low</p>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="text-sm font-medium mb-4">Refactor authentication flow</p>
-                    </div>
-                    <div class="flex items-center justify-between text-xs text-gray-500">
-                        <span class="flex items-center gap-1"><i class="fa-sharp fa-solid fa-alarm-clock"></i> 16
-                            h</span>
-                        <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> Nov 17</span>
-                    </div>
-                </div>
-            </div>
-            <div class="border rounded-lg w-60 mt-16 bg-white p-3 shadow-md">
-                <div class="flex items-center gap-2 ">
-                    <div class="h-3 w-3 border bg-red-500 rounded-full">
-                    </div>
-                    <div>
-                        <p class="font-semibold">To Do</p>
-                    </div>
-                </div>
-                <div class="w-full g p-3 bg-gray-50  border-l-5 border-l-yellow-500 shadow-md w-50">
-                    <div class="flex items-center justify-between border-1-4 border-1-red-500 mb-3">
-                        <p class="text-sm font-semibold">TASK-001</p>
 
-                        <div class=" flex items-center rounded-md border bg-yellow-500 h-6 w-17">
-                            <i class="fa-solid fa-plus text-xs"></i>
-                            <p class="text-sm font-semibold">Medium</p>
-                        </div>
-                    </div>
                     <div>
-                        <p class="text-sm font-medium mb-4">Refactor authentication flow</p>
+                        <p class="font-semibold">Mythoria 2</p>
+                    </div>
+                </div>
+                <div class="w-full g p-3 bg-gray-50   shadow-md w-50">
+
+                    <div>
+                        <p class="text-sm font-medium mb-4">
+                            Réaliser, en HTML, Tailwind CSS et JavaScript natif, une application inspirée de Jira,
+                            Linear ou Trello. L'utilisateur décrit son projet dans un formulaire ; l'application
+                            construit un prompt, l'envoie à une API d'IA avec Fetch (requête POST, JSON),
+                            exploite la réponse et affiche le plan sous forme de tableau de tâches.
+                        </p>
                     </div>
                     <div class="flex items-center justify-between text-xs text-gray-500">
-                        <span class="flex items-center gap-1"><i class="fa-sharp fa-solid fa-alarm-clock"></i> 16
-                            h</span>
-                        <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> Nov 17</span>
+                        <button class="flex items-center justify-center gap-1 h-7 border rounded-md p-1 w-15 bg-blue-600 text-white text-center "><a href="project.html">Open</a> 
+                        </button>
+                        <button class="flex items-center justify-center h-7 border rounded-md bg-red-500 text-white gap-1 w-15 "><i class="fa-solid fa-trash"></i>dalete</button>
                     </div>
                 </div>
             </div>
+            <div class="border rounded-lg w-60 mt-16 bg-white p-3 shadow-md">
+                <div class="flex items-center gap-2 ">
+
+                    <div>
+                        <p class="font-semibold">Methorya 1</p>
+                    </div>
+                </div>
+                <div class="w-full g p-3 bg-gray-50   shadow-md w-50">
+
+                    <div>
+                        <p class="text-sm font-medium mb-4">
+                            Réaliser, en HTML, Tailwind CSS et JavaScript natif, une application inspirée de Jira,
+                            Linear ou Trello. L'utilisateur décrit son projet dans un formulaire ; l'application
+                            construit un prompt, l'envoie à une API d'IA avec Fetch (requête POST, JSON),
+                            exploite la réponse et affiche le plan sous forme de tableau de tâches.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <button class="flex items-center justify-center gap-1 h-7 border rounded-md p-1 w-15 bg-blue-600 text-white text-center "><a href="project.html">Open</a> 
+                        </button>
+                        <button class="flex items-center justify-center h-7 border rounded-md bg-red-500 text-white gap-1 w-15 "><i class="fa-solid fa-trash"></i>dalete</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border rounded-lg w-60 mt-16 bg-white p-3 shadow-md">
+                <div class="flex items-center gap-2 ">
+
+                    <div>
+                        <p class="font-semibold">Coop</p>
+                    </div>
+                </div>
+                <div class="w-full g p-3 bg-gray-50 shadow-md w-50">
+
+                    <div>
+                        <p class="text-sm font-medium mb-4">
+                            Réaliser, en HTML, Tailwind CSS et JavaScript natif, une application inspirée de Jira,
+                            Linear ou Trello. L'utilisateur décrit son projet dans un formulaire ; l'application
+                            construit un prompt, l'envoie à une API d'IA avec Fetch (requête POST, JSON),
+                            exploite la réponse et affiche le plan sous forme de tableau de tâches.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <button class="flex items-center justify-center gap-1 h-7 border rounded-md p-1 w-15 bg-blue-600 text-white text-center "><i class="fa-solid fa-arrow-up-right-from-square"></i><a href="project.html">Open</a> 
+                        </button>
+                        <button class="flex items-center justify-center h-7 border rounded-md bg-red-500 text-white gap-1 w-15 "><i class="fa-solid fa-trash"></i>dalete</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border rounded-lg w-60 mt-16 bg-white p-3 shadow-md">
+                <div class="flex items-center gap-2 ">
+
+                    <div>
+                        <p class="font-semibold">YouCode</p>
+                    </div>
+                </div>
+                <div class="w-full g p-3 bg-gray-50   shadow-md w-50">
+
+                    <div>
+                        <p class="text-sm font-medium mb-4">
+                            Réaliser, en HTML, Tailwind CSS et JavaScript natif, une application inspirée de Jira,
+                            Linear ou Trello. L'utilisateur décrit son projet dans un formulaire ; l'application
+                            construit un prompt, l'envoie à une API d'IA avec Fetch (requête POST, JSON),
+                            exploite la réponse et affiche le plan sous forme de tableau de tâches.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <button class="flex items-center justify-center gap-1 h-7 border rounded-md p-1 w-15 bg-blue-600 text-white text-center "><a href="project.html">Open</a> 
+                        </button>
+                        <button class="flex items-center justify-center h-7 border rounded-md bg-red-500 text-white gap-1 w-15 "><i class="fa-solid fa-trash"></i>dalete</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border rounded-lg w-60 mt-16 bg-white p-3 shadow-md">
+                <div class="flex items-center gap-2 ">
+
+                    <div>
+                        <p class="font-semibold">FetNix</p>
+                    </div>
+                </div>
+                <div class="w-full g p-3 bg-gray-50   shadow-md w-50">
+
+                    <div>
+                        <p class="text-sm font-medium mb-4">
+                            Réaliser, en HTML, Tailwind CSS et JavaScript natif, une application inspirée de Jira,
+                            Linear ou Trello. L'utilisateur décrit son projet dans un formulaire ; l'application
+                            construit un prompt, l'envoie à une API d'IA avec Fetch (requête POST, JSON),
+                            exploite la réponse et affiche le plan sous forme de tableau de tâches.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <button class="flex items-center justify-center gap-1 h-7 border rounded-md p-1 w-15 bg-blue-600 text-white text-center "><a href="project.html">Open</a> 
+                        </button>
+                        <button class="flex items-center justify-center h-7 border rounded-md bg-red-500 text-white gap-1 w-15 "><i class="fa-solid fa-trash"></i>dalete</button>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            
+            
         </div>
 
 
@@ -281,7 +274,7 @@
                             <p class="font-semibold">hakim</p>
                         </div>
                         <div>
-                            <p>completed <span class="text-green-500">TASK-003</span> in progress</p>
+                            <p>completed <span class="text-green-500">TASK-003</span></p>
                         </div>
                         <span class="text-sm">2m ago</span>
                     </div>
@@ -293,8 +286,9 @@
 
     </main>
     <script src="script.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/dist/parsley.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/dist/parsley.min.js"></script>
 </body>
 
 </html>

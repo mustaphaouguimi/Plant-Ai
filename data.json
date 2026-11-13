@@ -11,12 +11,12 @@
         "CSS, JavaScript and data folders are created.",
         "All HTML pages load without errors."
       ],
-      "priority": "Critical",
+      "priority": "Low",
       "importance": "High",
       "size": "S",
       "estimatedTime": 4,
       "deadline": "Day 1",
-      "status": "To Do",
+      "status": "Done",
       "dependencies": []
     },
     {
@@ -31,12 +31,12 @@
         "Dashboard and Nouveau projet links navigate to the correct pages.",
         "The layout is responsive on desktop and mobile."
       ],
-      "priority": "High",
+      "priority": "Low",
       "importance": "High",
       "size": "M",
       "estimatedTime": 6,
       "deadline": "Day 2",
-      "status": "To Do",
+      "status": "Do",
       "dependencies": [
         "TASK-001"
       ]
@@ -56,12 +56,12 @@
         "An empty state appears when no projects exist.",
         "A button allows users to create a new project."
       ],
-      "priority": "Critical",
+      "priority": "Low",
       "importance": "High",
       "size": "L",
       "estimatedTime": 8,
       "deadline": "Day 3",
-      "status": "To Do",
+      "status": "Do",
       "dependencies": [
         "TASK-002"
       ]
@@ -84,7 +84,7 @@
       "size": "M",
       "estimatedTime": 6,
       "deadline": "Day 3",
-      "status": "To Do",
+      "status": "progress",
       "dependencies": [
         "TASK-002"
       ]
@@ -108,7 +108,7 @@
       "size": "M",
       "estimatedTime": 6,
       "deadline": "Day 4",
-      "status": "To Do",
+      "status": "Do",
       "dependencies": [
         "TASK-004"
       ]
@@ -132,7 +132,7 @@
       "size": "L",
       "estimatedTime": 8,
       "deadline": "Day 6",
-      "status": "To Do",
+      "status": "Do",
       "dependencies": [
         "TASK-005"
       ]
@@ -158,7 +158,7 @@
       "size": "L",
       "estimatedTime": 8,
       "deadline": "Day 7",
-      "status": "To Do",
+      "status": "progress",
       "dependencies": [
         "TASK-006"
       ]
@@ -184,7 +184,7 @@
       "size": "S",
       "estimatedTime": 4,
       "deadline": "Day 7",
-      "status": "To Do",
+      "status": "Do",
       "dependencies": [
         "TASK-006"
       ]
@@ -203,12 +203,12 @@
         "Deleted projects disappear from the dashboard.",
         "Project information remains available after page reload."
       ],
-      "priority": "Critical",
+      "priority": "Low",
       "importance": "High",
       "size": "M",
       "estimatedTime": 6,
       "deadline": "Day 5",
-      "status": "To Do",
+      "status": "Do",
       "dependencies": [
         "TASK-003"
       ]
@@ -216,7 +216,7 @@
     {
       "id": "TASK-010",
       "title": "Build the Task Board interface",
-      "description": "Create the project Task Board with project summary information and three Kanban columns: To Do, In Progress and Done. Display task cards with their essential information.",
+      "description": "Create the project Task Board with project summary information and three Kanban columns: Do, In Progress and Done. Display task cards with their essential information.",
       "userStories": [
         "As a user, I want to visualize my tasks in a Kanban board so that I can follow the development workflow."
       ],
@@ -233,7 +233,7 @@
       "size": "L",
       "estimatedTime": 8,
       "deadline": "Day 7",
-      "status": "To Do",
+      "status": "progress",
       "dependencies": [
         "TASK-007",
         "TASK-009"
@@ -260,7 +260,7 @@
       "size": "L",
       "estimatedTime": 8,
       "deadline": "Day 8",
-      "status": "To Do",
+      "status": "Do",
       "dependencies": [
         "TASK-010"
       ]
@@ -283,7 +283,7 @@
       "size": "S",
       "estimatedTime": 4,
       "deadline": "Day 8",
-      "status": "To Do",
+      "status": "Do",
       "dependencies": [
         "TASK-011"
       ]
@@ -291,7 +291,7 @@
     {
       "id": "TASK-013",
       "title": "Implement dependency-based status validation",
-      "description": "Prevent users from moving a task to Done while one or more dependencies are not completed. Display an explanatory message and update project progress based only on task statuses.",
+      "description": "Prevent users from moving a task Done while one or more dependencies are not completed. Display an explanatory message and update project progress based only on task statuses.",
       "userStories": [
         "As a user, I want task dependencies to be respected so that tasks are completed in the correct order.",
         "As a user, I want accurate progress statistics so that I can monitor project completion."
@@ -303,12 +303,12 @@
         "Progress equals the number of Done tasks divided by total tasks.",
         "Progress updates immediately after a valid status change."
       ],
-      "priority": "Critical",
+      "priority": "Low",
       "importance": "High",
       "size": "M",
       "estimatedTime": 6,
       "deadline": "Day 8",
-      "status": "To Do",
+      "status": "Done",
       "dependencies": [
         "TASK-011",
         "TASK-012"
@@ -335,7 +335,7 @@
       "size": "M",
       "estimatedTime": 6,
       "deadline": "Day 8",
-      "status": "To Do",
+      "status": "Done",
       "dependencies": [
         "TASK-007",
         "TASK-009"
@@ -360,11 +360,11 @@
         "The application is deployed and basic usage instructions are documented."
       ],
       "priority": "Critical",
-      "importance": "High",
+      "importance": "Low",
       "size": "L",
       "estimatedTime": 8,
       "deadline": "Day 9",
-      "status": "To Do",
+      "status": "Do",
       "dependencies": [
         "TASK-008",
         "TASK-010",
