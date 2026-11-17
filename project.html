@@ -26,17 +26,31 @@
                             class="fa solid fa-plus"></i>Nouveau projet</a></li>
                 <li><button type="button" class="flex items-center gap-3 p-3 rounded-lg bg-blue-600 hover:bg-blue-700"
                         id="open" data-toggle="modal" data-target="#modal"><i class="fa-solid fa-gear"></i>
-                        Paramètres</button><a href="project.html"></a></li>
+                        Paramètres</button></li>
             </ul>
         </nav>
     </aside>
     <main class="ml-64  min-h-screen">
+        <div id="modal"
+            class="hidden fixed bg-black/50 inset-0 z-50 flex items-center justify-center rounded-xl p-6 h-modal">
+            <div class="bg-gray-50 shadow-md rounded-xl p-6 w-full  max-w-md">
+                <form id="vform" data-parsley-validate class="flex flex-col gap-4">
+                    <input type="password" id="apiKey" required minlength="8" data-parsley-minlength="8"
+                        data-parsley-minlength-message="at lest 8 character"  placeholder="Enter API key"
+                        class="border border-gray-300 rounded-lg outline-none h-10 px-3 focus:ring-2 focus:ring-blue-500">
+                    <button type="submit" id="close" class="rounded-lg bg-blue-600 hover:bg-blue-700">send</button>
+                </form>
+            </div>
+
+        </div>
         <h1 id="titre" class="text-center font-semibold"></h1>
         <div class="laoder hidden" id="loader">loading...</div>
         <div class="grid grid-cols-3 place-items-center" id="task-grid">
         </div>
     </main>
     <script type="module" src="app.js"></script>
+       <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/dist/parsley.min.js"></script>
 </body>
 
 </html>

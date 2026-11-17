@@ -24,8 +24,8 @@ const taskgrid =document.getElementById("task-grid")
 
 
 export function afficherTache(task){
-    console.log(stat[task.status])
-    console.log(task.status)
+    // console.log(stat[task.status])
+    // console.log(task.status)
     taskgrid.innerHTML+=`
     <div class="border rounded-lg w-60 mt-16 bg-white p-3 shadow-md">
                 <div class="flex items-center gap-2">
@@ -56,3 +56,27 @@ export function afficherTache(task){
     `
 }
 
+
+
+export function percentage(){
+    let percentage = 0
+            let total = 0
+            let finished = 0
+            tasks.tasks.forEach(element => {
+                total++
+                if (element.status === "Done") {
+    
+                    finished++
+                }
+    
+            });
+            percentage = (finished / total) * 100;
+           
+    
+            titre.innerHTML += `<div class="class="m-5">${tasks.projectName}<br>
+        <span >7 jour</span>
+        <span>1 dev</span>
+        <span>${percentage} %terminé</span>
+        </div>`
+    
+}

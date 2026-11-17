@@ -1,32 +1,32 @@
- import { getTsk } from "./api"
+ import {getTsk} from "./api.js"
  
  
- let modal = document.getElementById("modal")
-        let open = document.getElementById("open")
-        let close=document.getElementById("close")
-        const vform=document.getElementById("vform")
-        console.log(vform)
-        open.addEventListener("click", () => {
-            modal.classList.toggle("hidden")
-        })
-        vform.addEventListener("submit",()=>{
-        const isValid=$(vform).parsley().isValid();
+//  let modal = document.getElementById("modal")
+//         let open = document.getElementById("open")
+//         let close=document.getElementById("close")
+//         const vform=document.getElementById("vform")
+//         console.log(vform)
+//         open.addEventListener("click", () => {
+//             modal.classList.toggle("hidden")
+//         })
+//         vform.addEventListener("submit",()=>{
+//         const isValid=$(vform).parsley().isValid();
 
-            if(isValid){
-            modal.classList.add("hidden")
-            }   
-        })
+//             if(isValid){
+//             modal.classList.add("hidden")
+//             }   
+//         })
 
-     const myTextInput=document.getElementById('myTextInput')
-    close.addEventListener("click",(e)=>{
-        e.preventDefault()
-    let value=myTextInput.value;
-    console.log(value)
-    sessionStorage.setItem("myKey",value)
+//     const myTextInput=document.getElementById('myTextInput')
+//     close.addEventListener("click",(e)=>{
+//         e.preventDefault()
+//     let value=myTextInput.value;
+
+//     sessionStorage.setItem("myKey",value)
         
-    })
-    let key=sessionStorage.getItem("myKey")
+//     })
     
+    console.log(sessionStorage.getItem("kesy ","myKey"))
 
 
 
@@ -34,13 +34,19 @@ const newProject=document.querySelector("#newProject")
 
 
 const btnSubmit=document.getElementById("btnSubmit")
-btnSubmit.addEventListener("submit",(e)=>{
-    e.preventDefault()
-})
 
+
+
+
+export function prompt(){
+    if(btnSubmit){
+btnSubmit.addEventListener("submit",(e)=>{
+  e.preventDefault()
+});
 newProject.addEventListener("submit",(e)=>{
     e.preventDefault()
     let description=document.getElementById("description").value
+    console.log(description.length)
     let brief=document.querySelector("#brief").value
     let duration=document.querySelector('#duration').value
     let technologies=document.getElementById("technologies").value
@@ -92,8 +98,10 @@ Return ONLY a valid JSON object, with no markdown, no code fences and no text be
 Property names and allowed values must be written exactly as shown above.estimatedTime and totalEstimatedHours must be numbers, not strings.totalEstimatedHours must equal the sum of all estimatedTime values.Generate between 8 and 40 tasks, depending on the project duration, the team size and the difficulty level.
 --- FIN DU PROMPT ---`
 console.log(prompt)
-if(!prompt) return
+newProject.reset()
+if(!prompt.valueOf) return
 getTsk(prompt)
 
 
 })
+}}

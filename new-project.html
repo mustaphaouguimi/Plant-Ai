@@ -40,7 +40,7 @@
             class="hidden fixed bg-black/50 inset-0 z-50 flex items-center justify-center rounded-xl p-6 h-modal">
             <div class="bg-gray-50 shadow-md rounded-xl p-6 w-full  max-w-md">
                 <form id="vform" data-parsley-validate class="flex flex-col gap-4">
-                    <input type="password" required minlength="8" data-parsley-minlength="8"
+                    <input type="password" id="apiKey" required minlength="8" data-parsley-minlength="8"
                         data-parsley-minlength-message="at lest 8 character" value="send" placeholder="Enter API key"
                         class="border border-gray-300 rounded-lg outline-none h-10 px-3 focus:ring-2 focus:ring-blue-500">
                     <button type="submit" id="close" class="rounded-lg bg-blue-600 hover:bg-blue-700">send</button>
@@ -77,13 +77,13 @@
                         data-parsley-minlength-message="at lest 10 character"
                         class="w-full border border-gray-300 rounded-lg h-10 px-3 outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="Discript your project" id="description"></textarea>
-                    <label for="description" data-parsley-required="true"
-                        class="block  mb-2 font-medium" id="brief">Brief complet</label>
-                    <textarea name="description" required minlength="10"
+                    <label for="brief" data-parsley-required="true"
+                        class="block  mb-2 font-medium" >Brief complet</label>
+                    <textarea name="brief" required minlength="10"
                         data-parsley-required-message="Brief of project is required"
                         data-parsley-minlength-message="at lest 10 character"
                         class="w-full border border-gray-300 rounded-lg h-10 px-3 outline-none focus:ring-2 focus:ring-blue-500"
-                         id="description"></textarea>
+                         id="brief"></textarea>
                     <label for="duration" data-parsley-minlength="1" class="mb-2 font-medium">duration in days</label>
                     <input type="number" required min="1" id="duration" data-parsley-required-message="Duration is required"
                         placeholder="e.g. 7" data-parsley-type="number"
@@ -114,7 +114,7 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/dist/parsley.min.js"></script>
-    <script type="module" src="script.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 
 </html>
