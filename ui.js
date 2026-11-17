@@ -1,3 +1,8 @@
+import { tasks } from "./localstorage.js"
+const todo=document.getElementById("todo")
+const progress=document.getElementById("progress")
+const done=document.getElementById("done")
+
  const colors={
     Low:"bg-green-500",
     High:"bg-red-500",
@@ -21,12 +26,11 @@
     Done:"bg-green-500"
 }
 const taskgrid =document.getElementById("task-grid")
-
+const titre=document.getElementById("titre")
 
 export function afficherTache(task){
-    // console.log(stat[task.status])
-    // console.log(task.status)
-    taskgrid.innerHTML+=`
+    
+    const card=`
     <div class="border rounded-lg w-60 mt-16 bg-white p-3 shadow-md">
                 <div class="flex items-center gap-2">
                     <div class="h-3 w-3 ${bg[task.status]} rounded-full">
@@ -54,8 +58,15 @@ export function afficherTache(task){
                 </div>
             </div>
     `
+    if(task.status==="Do"){
+        todo.innerHTML+=card
+    }else if(task.status==="progress"){
+        progress.innerHTML+=card
+    }
+    else if(task.status==="Done"){
+        done.innerHTML+=card
+    }
 }
-
 
 
 export function percentage(){
@@ -72,7 +83,7 @@ export function percentage(){
             });
             percentage = (finished / total) * 100;
            
-    
+    tasks.tasks
             titre.innerHTML += `<div class="class="m-5">${tasks.projectName}<br>
         <span >7 jour</span>
         <span>1 dev</span>

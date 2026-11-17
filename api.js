@@ -1,9 +1,11 @@
-let close = document.getElementById("close")
-let modal = document.getElementById("modal")
-let open = document.getElementById("open")
+
+
 
 const vform = document.getElementById("vform")
 export function formValid(){
+let close = document.getElementById("close")
+let modal = document.getElementById("modal")
+let open = document.getElementById("open")
 
 open.addEventListener("click", () => {
     modal.classList.toggle("hidden")
@@ -15,13 +17,11 @@ vform.addEventListener("submit", (e) => {
 
     if (isValid) {
         const apiKey = document.getElementById('myTextInput').value
-        console.log(document.getElementById('myTextInput').value)
         
-        sessionStorage.setItem("apiKey",apiKey)
+        sessionStorage.setItem("apiKey", apiKey)
 
         modal.classList.add("hidden")
     }
- sessionStorage.getItem("apiKey")
 
 })
 }
@@ -29,8 +29,9 @@ let key=sessionStorage.getItem("apiKey")
 console.log (key)
 
 
-export async function getTsk(prompt) {
+export async function getTsk(prompttext) {
     try {
+        const apiKey=sessionStorage.getItem("apiKey")
         const res = await fetch('https://api.openai.com/v1/chat/completions', {
             method: 'POST',
             headers: {
@@ -39,8 +40,8 @@ export async function getTsk(prompt) {
             },
             body: JSON.stringify({
                 model: "gpt-4o-mini",
-                message: [
-                    { role: "user", content: prompt }
+                messages: [
+                    { role: "user", content: prompttext }
                 ]
 
             })
@@ -53,6 +54,6 @@ export async function getTsk(prompt) {
         return data;
 
     } catch (error) {
-        console.log(error)
+        console.log("api error",error)
     }
 }
