@@ -1,6 +1,4 @@
 
-
-
 const vform = document.getElementById("vform")
 export function formValid(){
 let close = document.getElementById("close")
