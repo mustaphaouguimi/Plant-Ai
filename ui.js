@@ -2,7 +2,6 @@ import { tasks } from "./localstorage.js"
 const todo = document.getElementById("todo")
 const progress = document.getElementById("progress")
 const done = document.getElementById("done")
-
 const colors = {
     Low: "bg-green-500",
     High: "bg-red-500",
@@ -60,22 +59,15 @@ export function afficherTache(task) {
     else if (task.status === "Done") {
         done.innerHTML += card
     }
-
 const cardElements = document.querySelectorAll(".cardElement")
-
-
-
-   
-
 }
+
 const openmodal = document.getElementById("openmodal")
 const closemodal=document.querySelector("#closemodal")
 
  document.addEventListener("click", (e) => {
         const card=e.target.closest(".cardElement")
         if(!card) return;
-        console.log("idd",card.dataset)
-        console.log("id",card.dataset.id)
         const taskId=(card.dataset.id);
         console.log(taskId)
         const task=tasks.tasks.find(t=>t.id===taskId)
@@ -85,11 +77,10 @@ const closemodal=document.querySelector("#closemodal")
         openmodal.showModal()
         
     })
+    if(closemodal){
 
-    closemodal.addEventListener("click",()=>openmodal.close())
-
-
-
+closemodal.addEventListener("click",()=>openmodal.close())
+}
 export function percentage() {
     let percentage = 0
     let total = 0

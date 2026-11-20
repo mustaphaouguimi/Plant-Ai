@@ -7,34 +7,53 @@ import{formValid} from "./api.js"
 const vform = document.getElementById("vform")
 const btnSubmit=document.getElementById("btnSubmit")
 import { percentage } from "./ui.js"
-
-fetch("./data.json")
-    .then((response => {
-        if (!response.ok) {
-            throw new Error(response.status)
-
-        }
-        return response.json()
-    })).then(data => {
-        localStorage.setItem("tasks", JSON.stringify(data))
-      
-
-        for (const element of tasks.tasks) {
-            // console.log(element)
-            afficherTache(element)
-
-        }
-    }).catch(error => {
-        console.log(error)
-    })
+import { getTsk } from "./api.js"
+import { createPrompt } from "./script.js"
+import { afficher } from "./api.js"
+if(taskgrid){
+afficher()}
 
 
+const newProject=document.querySelector("#newProject")
+if(newProject){
+newProject.addEventListener("submit",async(e)=>{
+    e.preventDefault()
+    console.log("form submited")
+    const prompttext=createPrompt()
+console.log("2-" ,prompttext)
+    if(!prompttext) return 
+try {
+    if(btnSubmit){
+        btnSubmit.disabled=true;
+        btnSubmit.value="generating..."
+    }
+    const result=await getTsk(prompttext)
+ console.log("api result",result)
+
+    const aiText=result.candidates[0].content.parts[0].aiText
+    console.log("geminei eia ",)
+    localStorage.setItem("aiText",JSON.stringify(aiText))
+        newProject.reset()
+        window.location.href="project.html"
+    
+
+} catch (error) {
+    console.log("error",error)
+    if(btnSubmit){
+        btnSubmit.disabled=false;
+        btnSubmit.value="Create plan"
+    }
+}
+
+    
+})
+}
 
 if(vform){
     formValid()
 }
 if(btnSubmit){
-    prompt()
+    createPrompt()
 }
 if(titre){
     percentage()

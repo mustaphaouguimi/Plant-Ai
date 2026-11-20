@@ -1,17 +1,11 @@
  import {getTsk} from "./api.js"   
-console.log(sessionStorage.getItem("kesy ","myKey"))
 const newProject=document.querySelector("#newProject")
 const btnSubmit=document.getElementById("btnSubmit")
 
-export function usePrompt(){
-    if(btnSubmit){
-btnSubmit.addEventListener("submit",(e)=>{
-  e.preventDefault()
-});
-newProject.addEventListener("submit",(e)=>{
-    e.preventDefault()
-    let description=document.getElementById("description").value.trim()
-    console.log(description.length)
+export function createPrompt(){
+  
+    let description=document.querySelector("#description").value.trim()
+    console.log(description)
     let brief=document.querySelector("#brief").value.trim()
     let duration=document.querySelector('#duration').value.trim()
     let technologies=document.getElementById("technologies").value.trim()
@@ -20,7 +14,7 @@ newProject.addEventListener("submit",(e)=>{
     let projectName=document.querySelector('#project-name').value.trim()
     if(description.length===0 || brief.length===0 || duration.length===0 ||technologies.length===0||projectName.length===0)return
 
-const usePrompt=`You are an experienced Senior Project Manager and Agile Coach specialized in software development.
+const prompttext=`You are an experienced Senior Project Manager and Agile Coach specialized in software development.
 Your mission is to analyze the project brief below and transform it into a detailed, realistic and well-organized development plan.
 PROJECT INFORMATION:
 Project Name: ${projectName}
@@ -62,10 +56,8 @@ Return ONLY a valid JSON object, with no markdown, no code fences and no text be
 }
 Property names and allowed values must be written exactly as shown above.estimatedTime and totalEstimatedHours must be numbers, not strings.totalEstimatedHours must equal the sum of all estimatedTime values.Generate between 8 and 40 tasks, depending on the project duration, the team size and the difficulty level.
 --- FIN DU PROMPT ---`
-console.log(usePrompt)
-newProject.reset()
-getTsk(usePrompt)
+
+return prompttext
 
 
-})
-}}
+}
